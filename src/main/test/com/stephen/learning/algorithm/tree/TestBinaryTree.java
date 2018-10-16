@@ -3,6 +3,7 @@ package com.stephen.learning.algorithm.tree;
 import org.junit.Test;
 
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @Auther: jack
@@ -43,5 +44,22 @@ public class TestBinaryTree {
         System.out.println("后序遍历：");
         binaryTree.traverseBinarySuf(root);
         System.out.println();
+    }
+
+    @Test
+    public void traverseBinaryTopToBottom(){
+        LinkedList<Character> tree=new LinkedList();
+        tree.add('A');tree.add('B');tree.add('D');
+        tree.add('H');tree.add(null);tree.add(null);
+        tree.add('I');tree.add(null);tree.add(null);
+        tree.add('E');tree.add(null);tree.add(null);
+        tree.add('C');tree.add('F');tree.add(null);
+        tree.add('J');tree.add(null);tree.add(null);
+        tree.add('G');tree.add(null);tree.add(null);
+        BinaryTree<Character> binaryTree=new BinaryTree<Character>();
+        //创建二叉树
+        BinaryTree.TreeNode root=binaryTree.creatBinaryPre(tree);
+        List<Character> list=binaryTree.traverseBinaryTopToBottom(root);
+        System.out.println(list);
     }
 }

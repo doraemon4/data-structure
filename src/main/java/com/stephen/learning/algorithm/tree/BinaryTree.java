@@ -3,7 +3,8 @@ package com.stephen.learning.algorithm.tree;
 
 import lombok.ToString;
 
-import java.util.LinkedList;
+import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * @Auther: jack
@@ -76,6 +77,31 @@ public class BinaryTree<T> {
             this.left=left;
             this.right=right;
         }
+    }
+
+    /**
+     * 从上往下打印二叉树
+     * @param root
+     * @return
+     */
+    public List<T> traverseBinaryTopToBottom(TreeNode<T> root){
+        List<T> list=new ArrayList<T>();
+        if(root==null){
+            return Collections.EMPTY_LIST;
+        }
+        Queue<TreeNode<T>> queue=new LinkedBlockingQueue<TreeNode<T>>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            TreeNode<T> node=queue.poll();
+            list.add(node.data);
+            if(node.left!=null){
+                queue.add(node.left);
+            }
+            if(node.right!=null){
+                queue.add(node.right);
+            }
+        }
+        return list;
     }
 }
 
