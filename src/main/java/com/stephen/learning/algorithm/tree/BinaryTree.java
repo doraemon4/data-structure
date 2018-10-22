@@ -44,7 +44,7 @@ public class BinaryTree<T> {
     }
 
     /**
-     * ˙中序遍历
+     * 中序遍历
      * @param root
      */
     public void traverseBinaryMid(TreeNode<T> root){

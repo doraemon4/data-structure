@@ -1,6 +1,6 @@
 package com.stephen.learning.algorithm.link;
 
-import java.util.LinkedList;
+import org.junit.Test;
 
 /**
  * @Auther: jack
@@ -24,5 +24,18 @@ public class TestLink {
         nums.add(4);
         nums.add(5);
         nums.printNode();
+    }
+
+    @Test
+    public void reverse(){
+        Link<String> link = new Link();
+        link.add("A");
+        link.add("B");
+        link.add("C");
+        link.add("D");
+        link.add("E");
+        link.printNode();
+        System.out.println("反转之后：");
+        link.reverse(link.getRoot()).printNode();
     }
 }

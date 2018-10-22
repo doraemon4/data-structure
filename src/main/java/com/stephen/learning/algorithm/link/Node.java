@@ -66,4 +66,18 @@ class Link<T> {
             root.printNode();
         }
     }
+
+    /**
+     * 递归反转(A->B->C->D->E 反转后 A<-B<-C<-D<-E)
+     * @param node
+     */
+    public Node reverse(Node node){
+        if(node==null||node.next==null){
+            return node;
+        }
+        Node head=reverse(node.next);
+        node.next.next=node;
+        node.next=null;
+        return head;
+    }
 }
