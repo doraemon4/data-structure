@@ -20,8 +20,6 @@ public class LRUCacheImpl<K,V> implements LRUCache<K,V> {
         this.cache=new LinkedList<K>();
     }
 
-
-
     public V get(K key) {
         if(this.keyValue.containsKey(key)){
             if(this.cache.peekFirst()!=key){
@@ -40,7 +38,6 @@ public class LRUCacheImpl<K,V> implements LRUCache<K,V> {
             }
             this.cache.removeFirstOccurrence(key);
         }else{
-            this.keyValue.put(key,value);
             if(this.cache.size()==capacity){
                 this.keyValue.remove(this.cache.removeLast());
             }
